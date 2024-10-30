@@ -34,8 +34,12 @@ contract TaskManager {
     //Defino una constante que va a almacenar el número máximo de tareas que puedo crear
     uint256 constant MAX_TASK = 10;
 
-    
+    //Ahora realizo un CRUD
 
+    //Create task
+    //Read Task
+    //Update task
+    //Delete task
 
 
 }
