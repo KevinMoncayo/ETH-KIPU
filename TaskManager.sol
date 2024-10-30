@@ -37,6 +37,15 @@ contract TaskManager {
     //Ahora realizo un CRUD
 
     //Create task
+    function createTask (string calldata _title) external{
+        require(bytes(_title).length > 0, "empty title");
+        if (taskCounter >= MAX_TASK){
+            revert("maximum achieved");
+        }
+        tasks.push( Task(taskCounter, _title, TaskStatus.Pending) );
+        emit TaskCreated(taskCounter, _title); 
+        taskCounter ++;
+    }
     //Read Task
     //Update task
     //Delete task
