@@ -25,6 +25,49 @@
 				"type": "event"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_title",
+						"type": "string"
+					}
+				],
+				"name": "createTask",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "readNextToDo",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "enum TaskManager.TaskStatus",
+								"name": "status",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct TaskManager.Task",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "taskCounter",
 				"outputs": [
@@ -65,6 +108,24 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum TaskManager.TaskStatus",
+						"name": "_status",
+						"type": "uint8"
+					}
+				],
+				"name": "updateTaskStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -95,11 +156,11 @@
 	},
 	"sources": {
 		"TaskManager.sol": {
-			"keccak256": "0x676e1e6e4aaa118134127d508ec9b7d0f18123521915942340a99dce4da3177a",
+			"keccak256": "0x5e3c168a5ae6b399b170a357c014f148b1bbd3d68235b977e7f0f82ce244d5be",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f5558e5837fc15f3552cddf43c452dc8c74d7943d69ec0dd3d28b956ed990864",
-				"dweb:/ipfs/Qmax5Tz3HDJwu859qcmC7Dc5QUe9yev3oNuiur1URYsgMy"
+				"bzz-raw://0af533d4d7a633253255f5bc9278226359dc96f982429f51f19d6177ceb9e615",
+				"dweb:/ipfs/QmWb1SpHXBVmf3gkoHRSQwrjeRjEkDHwrXbfbD6vJhq62v"
 			]
 		}
 	},

@@ -47,7 +47,31 @@ contract TaskManager {
         taskCounter ++;
     }
     //Read Task
+    function readNextToDo() external view returns (Task memory){
+        uint256 taskLen = tasks.length;
+        for(uint256 i=0; i<taskLen; i++){
+            if (tasks[i].status == TaskStatus.Pending) {
+                return tasks[i];
+            }
+        }
+        return tasks[taskLen--];//Esta instrucción se hace para devolver la última tarea por default.
+    }
+    
+    /* ¿Que pasa si a través de la función updateTaskStatus intento a ingresar a una tarea que no existe? 
+    * R: Se supone que estaría accediendo a una posición de memoria que no debería. 
+    * Para evitar esto, se va a usar el siguiente modificador
+    */  
+
+    modifier validTaskIndex (uint256 _index){
+        require (_index < tasks.length, "id does not exist");
+        _;
+    }
+    
     //Update task
+    function updateTaskStatus (uint256 _id, TaskStatus _status) external validTaskIndex(_id)  //Así se linkea el modificador
+    {
+        tasks[_id].status = _status;
+    }
     //Delete task
 
 
