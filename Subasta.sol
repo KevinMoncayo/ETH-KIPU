@@ -1,12 +1,20 @@
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity >0.7.0 <0.9.0; //Especifico el rango de versiones de solidity para mi contrato
+// SPDX-License-Identifier: MIT
+pragma solidity >0.7.0 < 0.9.0; //Especifico el rango de versiones de solidity para mi contrato
 
 
 contract Subasta {
 
+    //Inicialización de parámetros
+    
+    uint256 tiempoFinalizacionSubasta;
+    uint256 public apuestaMaxima;
+    address apostadorMaximo;
+
     //Constructor que inicializa la subasta con los paràmetros necesarios para su funcionamiento.
 
-
+    constructor(uint256 _duracionEnSegundos) {
+        tiempoFinalizacionSubasta = block.timestamp + _duracionEnSegundos;
+    }
 
     /*
     *Función para ofertar: Permite a los participantes ofertar por el artículo. 
@@ -16,7 +24,17 @@ contract Subasta {
     *
     */
 
+    function hacerApuesta() external payable {
+        require(block.timestamp < tiempoFinalizacionSubasta, "La apuesta ha terminado");
 
+        if (msg.value > apuestaMaxima) {
+            apuestaMaxima = msg.value;
+            apostadorMaximo = msg.sender;
+        }
+        else {
+            revert("Hay un ofertante mayor");
+        }
+    }
 
     //Función para mostrar el ganador: muestra el ofertante ganador y el valor de la oferta ganadora.
 

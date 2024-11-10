@@ -11,6 +11,17 @@
 						"internalType": "string",
 						"name": "_nombre",
 						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_nombre",
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -80,11 +91,11 @@
 	},
 	"sources": {
 		"HelloWorld.sol": {
-			"keccak256": "0xc2835baffb7ca82037b36810dc89ff22ea3adfa2666cb33407734f962ed8b0fb",
+			"keccak256": "0xe3f2960d6f21ccaafac19de1afaff591742b2c6cc0355b05d2332e45c10d02cd",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2f5cd4cc357526df0a57a7b223ef686b1e4524bce3aebfc7b0fe5a0cb623b364",
-				"dweb:/ipfs/QmXjNbxcqWtwdCk99QqSg39PsrSdoNzZys6NkqR1Estzor"
+				"bzz-raw://0d2e2849ca02583c6be07b55dd3527cffdf311294f57e1b084b94e1faa6ee7ea",
+				"dweb:/ipfs/QmS53Xw7g3H9eVZ9pd6E78NciKnbHHQwqS4wd8BbB8whoq"
 			]
 		}
 	},

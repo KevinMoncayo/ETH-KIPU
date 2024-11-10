@@ -9,10 +9,10 @@ contract HelloWorld {
     uint256 fecha;
 
     constructor(string memory _nombre) {
+        nombre = _nombre;
         direccion = msg.sender;
         mensaje = "Contrato creado!";
         fecha = block.timestamp;
-        nombre = _nombre;
     }
 
     function verUltimaVisita() external view returns (string memory, address, string memory, uint256){
@@ -25,6 +25,7 @@ contract HelloWorld {
         mensaje = _mensaje;
         fecha = block.timestamp;
         //msg.value -> su medida es un wei (una pequeña porción de ether)
+        revert("the bid finished");//Para mandar un mensaje de error y revertir la transacción
     }
     
 }
